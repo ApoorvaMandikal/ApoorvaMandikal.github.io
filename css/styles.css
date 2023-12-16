@@ -1,586 +1,613 @@
 /* Custom properties/variables  */
 :root {
-    --main-white: #f0f0f0;
-    --main-red: #992b2c;
-    --main-blue: #45567d;
-    --main-gray: #303841;
-  }
-  
-  /* Base reset */
-  * {
-    margin: 0;
-    padding: 0;
-  }
-  
-  /* box-sizing and font sizing */
-  *,
-  *::before,
-  *::after {
-    box-sizing: inherit;
-  }
-  
-  html {
-    box-sizing: border-box;
-  
-    /* Set font size for easy rem calculations
-     * default document font size = 16px, 1rem = 16px, 100% = 16px
-     * (100% / 16px) * 10 = 62.5%, 1rem = 10px, 62.5% = 10px
-    */
-    font-size: 62.5%;
-    scroll-behavior: smooth;
-  }
-  /* width */
+  --main-white: #f0f0f0;
+  --main-red: #992b2c;
+  --main-blue: #45567d;
+  --main-gray: #303841;
+}
+
+/* Base reset */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* box-sizing and font sizing */
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+
+  /* Set font size for easy rem calculations
+   * default document font size = 16px, 1rem = 16px, 100% = 16px
+   * (100% / 16px) * 10 = 62.5%, 1rem = 10px, 62.5% = 10px
+  */
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+/* width */
 ::-webkit-scrollbar {
-    width: 10px;
-  }
-  
-  /* Track */
-  ::-webkit-scrollbar-track {
-    background: #000000; 
-  }
-   
-  /* Handle */
-  ::-webkit-scrollbar-thumb {
-    background: var(--main-red); 
-    border-radius: 8px;
-  
-  }
-  
-  /* Handle on hover */
-  ::-webkit-scrollbar-thumb:hover {
-    background: #772b23; 
-  }
-  
-  /* A few media query to set some font sizes at different screen sizes.
-   * This helps automate a bit of responsiveness.
-   * The trick is to use the rem unit for size values, margin and padding.
-   * Because rem is relative to the document font size
-   * when we scale up or down the font size on the document
-   * it will affect all properties using rem units for the values.
-  */
-  
-  /* I am using the em unit for breakpoints
-   * The calculation is the following
-   * screen size divided by browser base font size
-   * As an example: a breakpoint at 980px
-   * 980px / 16px = 61.25em
-  */
-  
-  /* 1200px / 16px = 75em */
-  @media (max-width: 75em) {
-    html {
-      font-size: 60%;
-    }
-  }
-  
-  /* 980px / 16px = 61.25em */
-  @media (max-width: 61.25em) {
-    html {
-      font-size: 58%;
-    }
-  }
-  
-  /* 460px / 16px = 28.75em */
-  @media (max-width: 28.75em) {
-    html {
-      font-size: 55%;
-    }
-  }
-  
-  /* Base styles */
-  
-  body {
-    font-family: 'Poppins', sans-serif;
-    font-size: 1.8rem; /* 18px */
-    font-weight: 400;
-    line-height: 1.4;
-    color: var(--main-white);
-  }
-  
-  h1,
-  h2,
-  h3 {
-    font-family: 'Raleway', sans-serif;
-    font-weight: 700;
-    text-align: center;
-  }
-  
-  h1 {
-    font-size: 6rem;
-  }
-  
-  h2 {
-    font-size: 4.2rem;
-  }
-  
-  ul {
-    list-style: none;
-  }
-  
-  a {
-    text-decoration: none;
-    color: var(--main-white);
-  }
-  
-  img {
-    display: block;
-    width: 100%;
-  }
-  
-  /* nav */
-  
-  .nav {
-    display: flex;
-    justify-content: flex-end;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    background: transparent;
-    box-shadow: 0 0 0 rgba(0, 0, 0, 0.4);
-    z-index: 10;
-  }
-  
-  .nav-list {
-    display: flex;
-    margin-right: 2rem;
-  }
-  
-  @media (max-width: 28.75em) {
-    .nav {
-      justify-content: center;
-    }
-  
-    .nav-list {
-      margin: 0 1rem;
-    }
-  }
-  
-  .nav-list a {
-    display: block;
-    font-size: 2.2rem;
-    padding: 2rem;
-  }
-  
-  .nav-list a:hover {
-    color: black;
-  }
-  
-  /* Welcome section */
-  
-  .welcome-section {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 100vh;
-    background-color: #000;
-    background-image: url("./../images/wolf-howling-to-moon.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center center;
-  }
-  
-  .welcome-section > p {
-    font-size: 3rem;
-    font-weight: 200;
-    font-style: italic;
-    color: black;
-  }
-
-  /** Work Section **/
-  .work-section{
-    display: flex;
-    flex-direction: column;
-    padding: 10rem 2rem;
-    background-color: #2b4162;
-    background-image: linear-gradient(315deg, #2b4162 0%, #12100e 74%);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center center;  
-  }
-
-    /**About me Section**/
-    #aboutme{
-      display: flex;
-      flex-direction: row;
-      width: 70%;
-      align-items: center;
-      justify-content: center;
-      margin: 0 auto; 
-  
-    }
-     #mypicture{
-      position: relative;
-      margin: 10px;
-      padding: 20px;
-      flex: 100%;
-     }
-     #aboutme_p{
-       position: relative;
-       color: var(--main-red);
-     }
-
-    #mypicture img{
-      border-radius: 50%;
-    }
-
-  /** Work & Education section**/
-
-  .row:before, .row:after {
-    content: " ";
-    display: table;
+  width: 10px;
 }
 
-  #work .header-col, #education .header-col{
-    padding-top:9px;
-  }
-
-  #work div, #education div{
-    padding-top:2%;
-  }
-
-  #work h3 span,#education h3 span {
-    border-bottom: 3px solid rgba(0,198,255,0.6);
-    padding-bottom: 6px;
-    color: var(--main-red);
+/* Track */
+::-webkit-scrollbar-track {
+  background: #000000; 
 }
-
-  .row .three{
-    width: 30%
-  }
-
-  .column, .columns{
-    position: relative;
-    padding: 0 20px;
-    min-height: 1px;
-    float: left;
-  }
-  .column:last-child {
-    float: right;
-}
-
-  .row .nine{
-    width: 70%;
-    text-align: center;
-  }
-
-  .description{
-    text-align: left;
-  }
-  .description, .info{
-    color: rgb(151, 150, 150);
-    padding-bottom: 5%;
-  }
-
-  hr.work {
-    border-top: 2px solid var(--main-white);
-    width: 80%;
-    margin: 0 auto;
-  }
-
-  @media only screen and (max-width: 900px){
-  #work .main-col {
-    padding-right: 5%;
-}
-  }
-
-    /** Resume section */
-
-  .resume-section{
-    display: flex;
-    padding-top: 2rem;
-    flex-direction: column;
-    background-image: url(./../images/black-mountains.png);
-    background-size: 100% 100%;
-    height: 100vh
-  }
-
-      /**Skills div **/
-      .container {
-        width: 90%;
-        padding:2% 2% 2% 2%;
-        margin: 0 auto; 
-        overflow: hidden;
-        display: flex;
-        align-items: center;
-        }
-        
-
-      #resumebutton .btn{
-        color: var(--main-white);
-        background-color: var(--main-gray);
-        width: 100%;
-      }
-      #resumebutton .btn-default, .btn-default:focus, .btn-default.focus, .btn-default:active, .btn-default.active {
-        -webkit-transition: all 0.6s ease-in-out;
-        -moz-transition: all 0.6s ease-in-out;
-        -o-transition: all 0.6s ease-in-out;
-        -ms-transition: all 0.6s ease-in-out;
-        transition: all 0.6s ease-in-out;
-      }
-      #resumebutton .btn-lg {
-        font-size: 1.3em;
-        padding: 10px 40px;
-      }
-
-        
-        .col {
-        width: 30%;
-          position: relative; 
-          font-size: 12px;
-          line-height: 2em;
-          padding: 2% 1% 0 0;
-          overflow-y: auto;
-          max-height: 100%;
-          flex: auto;
-        } 
-
-        #resumebutton{
-          padding: 10%;
-        }
-        /*.col { width:101%; }*/
-        .skill { 
-        list-style:none; 
-        padding-top:30px;
-        padding-left: 0;
-        }
-        
-        .skill li { 
-        display: block;
-        margin-bottom:70px; 
-        background:#030303; 
-        height:7px; 
-        border-radius:3px; 
-        border-left:1px solid #111; 
-        /**border-top:1px solid #111;**/ 
-        border-right:1px solid #333; 
-        border-bottom:1px solid #333;  
-        }
-        
-        .skill li em { 
-        position:relative; 
-          font-style: normal;
-          font-size: 14px;
-          text-align: center;
-          color:#dedede;
-        top:-28px;
-        }
-        
-        .blueline { 
-        height: 3px; 
-        margin: 2px 0; 
-        background: #2187e7; 
-        position: absolute;
-        box-shadow: 0px 0px 10px 1px rgba(0,198,255,0.6);
-        }
-  
-        .javascript         { width:90%;  animation:javascript 2s ease-out;}
-        .css                { width:95%;  animation:css 2s ease-out;}
-        .react              { width:70%;  animation:react 2s ease-out;}
-        .jquery             { width:75%;  animation:jquery 2s ease-out;}
-        .sqlserver          { width:80%;  animation:sqlserver 2s ease-out;}
-        .nodejs             { width:70%;  animation:nodejs 2s ease-out;}
-        .python             { width:40%;  animation:python 2s ease-out;}
-        .git                { width:60%;  animation:git 2s ease-out;}
-       /* .mongodb            { width:60%;  animation:mongodb 2s ease-out;}*/
-       
-        @keyframes javascript         { 0% {width:0px;} 100% {width:90%;} }
-        @keyframes css                { 0% {width:0px;} 100% {width:95%;} }
-        @keyframes React              { 0% {width:0px;} 100% {width:70%;} }
-        @keyframes jquery             { 0% {width:0px;} 100% {width:75%;} }
-        @keyframes sqlserver          { 0% {width:0px;} 100% {width:90%;} }
-        @keyframes nodejs             { 0% {width:0px;} 100% {width:70%;} }
-        @keyframes python             { 0% {width:0px;} 100% {width:50%;} }
-        @keyframes git                { 0% {width:0px;} 100% {width:60%;} }
-        @keyframes mongodb            { 0% {width:0px;} 100% {width:60%;} }
-  
-  
-        @media (max-width: 1200px){
-          h3 {font-size:2.2em;}
-        }
-        @media (max-width: 980px){
-          h3 {font-size:1.8em;}
-        }
-        @media (max-width: 767px){
-          h3 {font-size:1.4em;}
-        }
-        @media (max-width: 580px){
-          h3 {font-size:1.1em; padding:10px 0;}
-        }
-        @media (max-width: 480px){ 
-          h3 {font-size:2.2em; padding: 10px 0 15px 0;}
-          .col {width: 90%;}
-        }
-
-
-  
-  /* Projects section */
-  
-  .projects-section {
-    text-align: center;
-    padding: 10rem 2rem;
-    background-image: url(./../images/Abstract_purple.jpg);
-    background-size: 100% 100%;
-  }
-  
-  .projects-section-header {
-    max-width: 640px;
-    margin: 0 auto 6rem auto;
-    border-bottom: 0.2rem solid var(--main-white);
-  }
-  
-  @media (max-width: 28.75em) {
-    .projects-section-header {
-      font-size: 4rem;
-    }
-  }
-  
-  /* "Automagic" image grid using no media queries */
-  .projects-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    grid-gap: 4rem;
-    width: 100%;
-    max-width: 1280px;
-    margin: 0 auto;
-    margin-bottom: 6rem;
-  }
-  
-  @media (max-width: 30.625em) {
-    .projects-section {
-      padding: 6rem 1rem;
-    }
-  
-    .projects-grid {
-      grid-template-columns: 1fr;
-    }
-  }
-  
-  .project {
-    background: var(--main-gray);
-    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
-    border-radius: 2px;
-  }
-  
-  .code {
-    color: var(--main-gray);
-    transition: color 0.3s ease-out;
-  }
-  
-  .project:hover .code {
-    color: #ff7f50;
-  }
-  
-  .project-image {
-    height: calc(100% - 6.8rem);
-    width: 100%;
-    object-fit: cover;
-  }
-  
-  .project-title {
-    font-size: 2rem;
-    padding: 2rem 0.5rem;
-  }
-  
-  .btn {
-    display: inline-block;
-    padding: 1rem 2rem;
-    border-radius: 2px;
-  }
-  
-  .btn-show-all {
-    font-size: 2rem;
-    background: var(--main-gray);
-    transition: background 0.3s ease-out;
-  }
-  
-  .btn-show-all:hover {
-    background: var(--main-red);
-  }
-  
-  .btn-show-all:hover > i {
-    transform: translateX(2px);
-  }
-  
-  .btn-show-all > i {
-    margin-left: 10px;
-    transform: translateX(0);
-    transition: transform 0.3s ease-out;
-  }
-  
-  /* Contact section */
-  
-  .contact-section {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    width: 100%;
-    height: 80vh;
-    padding: 0 2rem;
-    background-image: url('./../images/mountains-moon.jpg');
-  }
-  
-  .contact-section-header > h2 {
-    font-size: 6rem;
-  }
-  
-  @media (max-width: 28.75em) {
-    .contact-section-header > h2 {
-      font-size: 4rem;
-    }
-  }
-  
-  .contact-section-header > p {
-    font-style: italic;
-  }
-  
-  .contact-links {
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    max-width: 980px;
-    margin-top: 4rem;
-    flex-wrap: wrap;
-  }
-  
-  .contact-details {
-    font-size: 2.4rem;
-    text-shadow: 2px 2px 1px #1f1f1f;
-    transition: transform 0.3s ease-out;
-  }
-  
-  .contact-details:hover {
-    transform: translateY(8px);
-  }
-  
-  /* Footer */
-  
-  footer {
-    font-weight: 300;
-    display: flex;
-    justify-content: space-evenly;
-    padding: 2rem;
-    background: url('./../images/3d-blackcube.jpg');
-    border-top: 4px solid var(--main-red);
-  }
-  
-  #footer-section{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    width: 100%;
-  }
  
-  @media (max-width: 28.75em) {
-    footer {
-      flex-direction: column;
-      text-align: center;
-    }
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: var(--main-red); 
+  border-radius: 8px;
+
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #772b23; 
+}
+
+/* A few media query to set some font sizes at different screen sizes.
+ * This helps automate a bit of responsiveness.
+ * The trick is to use the rem unit for size values, margin and padding.
+ * Because rem is relative to the document font size
+ * when we scale up or down the font size on the document
+ * it will affect all properties using rem units for the values.
+*/
+
+/* I am using the em unit for breakpoints
+ * The calculation is the following
+ * screen size divided by browser base font size
+ * As an example: a breakpoint at 980px
+ * 980px / 16px = 61.25em
+*/
+
+/* 1200px / 16px = 75em */
+@media (max-width: 75em) {
+  html {
+    font-size: 60%;
   }
-  
+  .h5{
+    padding-left: 3vw;
+  }
+  #aboutme{
+    flex-direction: column;
+  }
+  #mypicture img {
+    width: 50%;
+  }
+  #mypicture{
+    display: inline-flex;
+    justify-content: center;
+  }
+  #aboutme_p{
+    text-align: center;
+  }
+  .resume-section {
+    padding-top: 5%;
+  }
+}
+
+/* 980px / 16px = 61.25em */
+@media (max-width: 61.25em) {
+  html {
+    font-size: 58%;
+  }
+}
+
+/* 460px / 16px = 28.75em */
+@media (max-width: 28.75em) {
+  html {
+    font-size: 55%;
+  }
+  #intro{
+    padding: 3%;
+    text-align: center;
+  }
+  .resume-section {
+    padding-top: 20%;
+}
+
+}
+
+/* Base styles */
+
+body {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.8rem; /* 18px */
+  font-weight: 400;
+  line-height: 1.4;
+  color: var(--main-white);
+}
+
+h1,
+h2,
+h3 {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 700;
+  text-align: center;
+}
+
+h1 {
+  font-size: 6rem;
+}
+
+h2 {
+  font-size: 4.2rem;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: var(--main-white);
+}
+
+img {
+  display: block;
+  width: 100%;
+}
+
+/* nav */
+
+.nav {
+  display: flex;
+  justify-content: flex-end;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: transparent;
+  box-shadow: 0 0 0 rgba(0, 0, 0, 0.4);
+  z-index: 10;
+}
+
+.nav-list {
+  display: flex;
+  margin-right: 2rem;
+}
+
+@media (max-width: 28.75em) {
+  .nav {
+    justify-content: center;
+  }
+
+  /*.nav-list {
+    margin: 0 1rem;
+  }*/
+}
+
+.nav-list a {
+  display: block;
+  font-size: 2.2rem;
+  padding: 2rem;
+}
+
+.nav-list a:hover {
+  color: black;
+}
+
+/* Welcome section */
+
+.welcome-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  background-color: #000;
+  background-image: url("./../images/wolf-howling-to-moon.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+}
+
+.welcome-section > p {
+  font-size: 3rem;
+  font-weight: 200;
+  font-style: italic;
+  color: black;
+}
+
+/** Work Section **/
+.work-section{
+  display: flex;
+  flex-direction: column;
+  padding: 10rem 2rem;
+  background-color: #2b4162;
+  background-image: linear-gradient(315deg, #2b4162 0%, #12100e 74%);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;  
+}
+
+  /**About me Section**/
+  #aboutme{
+    display: flex;
+    /*flex-direction: row;*/
+    width: 70%;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto; 
+
+  }
+   #mypicture{
+    position: relative;
+    margin: 10px;
+    padding: 20px;
+    flex: 100%;
+   }
+   #aboutme_p{
+     position: relative;
+     color: var(--main-red);
+   }
+
+  #mypicture img{
+    border-radius: 50%;
+  }
+
+/** Work & Education section**/
+
+.row:before, .row:after {
+  content: " ";
+  display: table;
+}
+
+#work .header-col, #education .header-col{
+  padding-top:9px;
+}
+
+#work div, #education div{
+  padding-top:2%;
+}
+
+#work h3 span,#education h3 span {
+  border-bottom: 3px solid rgba(0,198,255,0.6);
+  padding-bottom: 6px;
+  color: var(--main-red);
+}
+
+.row .three{
+  width: 30%
+}
+
+.column, .columns{
+  position: relative;
+  padding: 0 20px;
+  min-height: 1px;
+  float: left;
+}
+.column:last-child {
+  float: right;
+}
+
+.row .nine{
+  width: 70%;
+  text-align: center;
+}
+
+.description{
+  text-align: left;
+}
+.description, .info{
+  color: rgb(151, 150, 150);
+  padding-bottom: 5%;
+}
+
+hr.work {
+  border-top: 2px solid var(--main-white);
+  width: 80%;
+  margin: 0 auto;
+}
+
+@media only screen and (max-width: 900px){
+#work .main-col {
+  padding-right: 5%;
+}
+}
+
+  /** Resume section */
+
+.resume-section{
+  display: flex;
+  padding-top: 5%;
+  flex-direction: column;
+  background-image: url(./../images/black-mountains.png);
+  background-size: 100% 100%;
+  height: 100vh
+}
+
+    /**Skills div **/
+    .container {
+      width: 90%;
+      padding:2% 2% 2% 2%;
+      margin: 0 auto; 
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      }
+      
+
+    #resumebutton .btn{
+      color: var(--main-white);
+      background-color: var(--main-gray);
+      width: 100%;
+    }
+    #resumebutton .btn-default, .btn-default:focus, .btn-default.focus, .btn-default:active, .btn-default.active {
+      -webkit-transition: all 0.6s ease-in-out;
+      -moz-transition: all 0.6s ease-in-out;
+      -o-transition: all 0.6s ease-in-out;
+      -ms-transition: all 0.6s ease-in-out;
+      transition: all 0.6s ease-in-out;
+    }
+    #resumebutton .btn-lg {
+      font-size: 1.3em;
+      padding: 10px 40px;
+    }
+
+      
+      .col {
+      width: 30%;
+        position: relative; 
+        font-size: 12px;
+        line-height: 2em;
+        padding: 2% 1% 0 0;
+        overflow-y: auto;
+        max-height: 100%;
+        flex: auto;
+      } 
+
+      #resumebutton{
+        padding: 10%;
+      }
+      /*.col { width:101%; }*/
+      .skill { 
+      list-style:none; 
+      padding-top:30px;
+      padding-left: 0;
+      }
+      
+      .skill li { 
+      display: block;
+      margin-bottom:70px; 
+      background:#030303; 
+      height:7px; 
+      border-radius:3px; 
+      border-left:1px solid #111; 
+      /**border-top:1px solid #111;**/ 
+      border-right:1px solid #333; 
+      border-bottom:1px solid #333;  
+      }
+      
+      .skill li em { 
+      position:relative; 
+        font-style: normal;
+        font-size: 14px;
+        text-align: center;
+        color:#dedede;
+      top:-28px;
+      }
+      
+      .blueline { 
+      height: 3px; 
+      margin: 2px 0; 
+      background: #2187e7; 
+      position: absolute;
+      box-shadow: 0px 0px 10px 1px rgba(0,198,255,0.6);
+      }
+
+      .javascript         { width:90%;  animation:javascript 2s ease-out;}
+      .css                { width:95%;  animation:css 2s ease-out;}
+      .react              { width:70%;  animation:react 2s ease-out;}
+      .jquery             { width:75%;  animation:jquery 2s ease-out;}
+      .sqlserver          { width:80%;  animation:sqlserver 2s ease-out;}
+      .nodejs             { width:70%;  animation:nodejs 2s ease-out;}
+      .python             { width:40%;  animation:python 2s ease-out;}
+      .git                { width:60%;  animation:git 2s ease-out;}
+     /* .mongodb            { width:60%;  animation:mongodb 2s ease-out;}*/
+     
+      @keyframes javascript         { 0% {width:0px;} 100% {width:90%;} }
+      @keyframes css                { 0% {width:0px;} 100% {width:95%;} }
+      @keyframes React              { 0% {width:0px;} 100% {width:70%;} }
+      @keyframes jquery             { 0% {width:0px;} 100% {width:75%;} }
+      @keyframes sqlserver          { 0% {width:0px;} 100% {width:90%;} }
+      @keyframes nodejs             { 0% {width:0px;} 100% {width:70%;} }
+      @keyframes python             { 0% {width:0px;} 100% {width:50%;} }
+      @keyframes git                { 0% {width:0px;} 100% {width:60%;} }
+      @keyframes mongodb            { 0% {width:0px;} 100% {width:60%;} }
+
+
+      @media (max-width: 1200px){
+        h3 {font-size:2.2em;}
+      }
+      @media (max-width: 980px){
+        h3 {font-size:1.8em;}
+      }
+      @media (max-width: 767px){
+        h3 {font-size:1.4em;}
+      }
+      @media (max-width: 580px){
+        h3 {font-size:1.1em; padding:10px 0;}
+      }
+      @media (max-width: 480px){ 
+        h3 {font-size:2.2em; padding: 10px 0 15px 0;}
+        .col {width: 50%;}
+        #resumebutton {padding: 5%}
+        
+      }
+
+
+/* Projects section */
+
+.projects-section {
+  text-align: center;
+  padding: 10rem 2rem;
+  background-image: url(./../images/Abstract_purple.jpg);
+  background-size: 100% 100%;
+}
+
+.projects-section-header {
+  max-width: 640px;
+  margin: 0 auto 6rem auto;
+  border-bottom: 0.2rem solid var(--main-white);
+}
+
+@media (max-width: 28.75em) {
+  .projects-section-header {
+    font-size: 4rem;
+  }
+}
+
+/* "Automagic" image grid using no media queries */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-gap: 4rem;
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  margin-bottom: 6rem;
+}
+
+@media (max-width: 30.625em) {
+  .projects-section {
+    padding: 6rem 1rem;
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.project {
+  background: var(--main-gray);
+  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+  border-radius: 2px;
+}
+
+.code {
+  color: var(--main-gray);
+  transition: color 0.3s ease-out;
+}
+
+.project:hover .code {
+  color: #ff7f50;
+}
+
+.project-image {
+  height: calc(100% - 6.8rem);
+  width: 100%;
+  object-fit: cover;
+}
+
+.project-title {
+  font-size: 2rem;
+  padding: 2rem 0.5rem;
+}
+
+.btn {
+  display: inline-block;
+  padding: 1rem 2rem;
+  border-radius: 2px;
+}
+
+.btn-show-all {
+  font-size: 2rem;
+  background: var(--main-gray);
+  transition: background 0.3s ease-out;
+}
+
+.btn-show-all:hover {
+  background: var(--main-red);
+}
+
+.btn-show-all:hover > i {
+  transform: translateX(2px);
+}
+
+.btn-show-all > i {
+  margin-left: 10px;
+  transform: translateX(0);
+  transition: transform 0.3s ease-out;
+}
+
+/* Contact section */
+
+.contact-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  height: 80vh;
+  padding: 0 2rem;
+  background-image: url('./../images/mountains-moon.jpg');
+}
+
+.contact-section-header > h2 {
+  font-size: 6rem;
+}
+
+@media (max-width: 28.75em) {
+  .contact-section-header > h2 {
+    font-size: 4rem;
+  }
+}
+
+.contact-section-header > p {
+  font-style: italic;
+}
+
+.contact-links {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  max-width: 980px;
+  margin-top: 4rem;
+  flex-wrap: wrap;
+}
+
+.contact-details {
+  font-size: 2.4rem;
+  text-shadow: 2px 2px 1px #1f1f1f;
+  transition: transform 0.3s ease-out;
+}
+
+.contact-details:hover {
+  transform: translateY(8px);
+}
+
+/* Footer */
+
+footer {
+  font-weight: 300;
+  display: flex;
+  justify-content: space-evenly;
+  padding: 2rem;
+  background: url('./../images/3d-blackcube.jpg');
+  border-top: 4px solid var(--main-red);
+}
+
+#footer-section{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+}
+
+@media (max-width: 28.75em) {
+  footer {
+    flex-direction: column;
+    text-align: center;
+  }
+}
