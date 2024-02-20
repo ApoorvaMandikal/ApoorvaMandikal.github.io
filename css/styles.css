@@ -339,6 +339,8 @@ hr.work {
       color: var(--main-white);
       background-color: var(--main-gray);
       width: 100%;
+      font-size: 80%;
+
     }
     #resumebutton .btn-default, .btn-default:focus, .btn-default.focus, .btn-default:active, .btn-default.active {
       -webkit-transition: all 0.6s ease-in-out;
@@ -359,14 +361,54 @@ hr.work {
         font-size: 12px;
         line-height: 2em;
         padding: 2% 1% 0 0;
-        overflow-y: auto;
         max-height: 100%;
         flex: auto;
+      }
+
+      .skillcont{
+        overflow-y: auto;
+      }
+
+      .dropdown {
+        position: relative;
+        display: inline-block;
       } 
+
+      .dropbtn {
+        background-color: #4CAF50;
+        color: white;
+        padding: 16px;
+        font-size: 16px;
+        border: none;
+        cursor: pointer;
+      }
+      
+      .dropdown-content {
+        background-color: #f9f9f9;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        z-index: 1;
+        min-width:59%
+      }
+      
+      .dropdown-content a {
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+      }
+      
+      #drpdwntn a:hover {background-color: #323131}
+      
+      #drpdwntn:hover .dropdown-content {
+        display: block;
+        position: absolute;
+      }
+    
 
       #resumebutton{
         padding: 10%;
       }
+
       /*.col { width:101%; }*/
       .skill { 
       list-style:none; 

@@ -23,8 +23,10 @@
           rel="stylesheet"
         />
         <script type='text/javascript' src='config.js'></script>
-        <script type='text/javascript' src='main.js'></script>
+        <script type='text/javascript' src='js/main.js'></script>
     </head>
+
+
     <!-- START NAV -->
 
     <nav id="navbar" class="nav">
@@ -162,7 +164,7 @@
     <section id="resume" class="resume-section">
       <h2 class="resume-section-header">Here is my Resume!</h2>
         <div class="container">
-          <div class="col">
+          <div class="col skillcont">
             <h3 class="title">Skills</h3>
             <ul class="skill">
               <li><span class="blueline javascript"></span><em>Javascript</em></li> 
@@ -176,10 +178,22 @@
         <!--  <li><span class="blueline mongodb"></span><em>MongoDB</em></li> -->
             </ul>
           </div>
+          <div class="col dropdown" id ="resumebutton">
+            <div id = "drpdwntn">
+              <button class="dropbtn btn btn-secondary dropdown-toggle" role="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Download My Resume! 
+              </button>
+              <div class="dropdown-content dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item" href="./resume/Apoorva_GM.pdf" download>pdf</a>
+                <a class="dropdown-item" href="./resume/Apoorva_GM.docx" download>docx</a>
+              </div>
+            </div>
+          </div>
+          <!--
           <div class="col" id ="resumebutton">
             <div class="cta-btn wow bounceInRight" data-wow-delay="0.4s">
-            <a class="btn btn-lg" href="./resume/Apoorva GM's Resume.pdf" download>Download My Resume!</a>
-            </div>
+            <a class="btn btn-lg" href="./resume/Apoorva_GM.docx" download>Download My Resume!</a>
+          </div>-->
         </div>
       </div>
     </section>
@@ -193,7 +207,7 @@
 
       <div class="projects-grid">
         <a
-          href="https://github.com/ApoorvaMandikal/twitter-clone"
+          href="https://master--twitterclone-tweeter.netlify.app/"
           target="_blank"
           class="project project-tile"
         >
