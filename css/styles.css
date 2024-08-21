@@ -339,9 +339,9 @@ hr.work {
       color: var(--main-white);
       background-color: var(--main-gray);
       width: 100%;
-      font-size: 80%;
-
+      font-size: 90%;
     }
+
     #resumebutton .btn-default, .btn-default:focus, .btn-default.focus, .btn-default:active, .btn-default.active {
       -webkit-transition: all 0.6s ease-in-out;
       -moz-transition: all 0.6s ease-in-out;
@@ -367,6 +367,10 @@ hr.work {
 
       .skillcont{
         overflow-y: auto;
+      }
+
+      .creddlelink{
+        color: springgreen;
       }
 
       .dropdown {
@@ -483,9 +487,11 @@ hr.work {
       }
       @media (max-width: 480px){ 
         h3 {font-size:1.5em; padding: 10px 0 15px 0;}
-        .col {width: 50%;}
+       .col {width: 80%;} 
         #resumebutton {padding: 5%}
-        
+        #resumebutton .btn{width: auto;}
+        .container {flex-direction: column;}
+
       }
 
 
